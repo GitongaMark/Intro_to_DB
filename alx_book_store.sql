@@ -11,9 +11,9 @@ CREATE TABLE Authors (
 -- Create Books table
 CREATE TABLE Books (
     BOOK_ID INT PRIMARY KEY AUTO_INCREMENT,
-    TITLE VARCHAR(130) NOT NULL,
+    title VARCHAR(130) NOT NULL,
     author_id INT NOT NULL,
-    PRICE DOUBLE NOT NULL,
+    price DOUBLE NOT NULL,
     PUBLICATION_DATE DATE,
     FOREIGN KEY (author_id) REFERENCES Authors (author_id)
         ON UPDATE CASCADE
