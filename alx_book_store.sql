@@ -1,6 +1,3 @@
--- alx_book_store.sql
--- Database schema for alx_book_store
-
 CREATE DATABASE IF NOT EXISTS alx_book_store;
 
 USE alx_book_store;
