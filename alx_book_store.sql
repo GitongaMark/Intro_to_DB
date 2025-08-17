@@ -1,3 +1,6 @@
+-- alx_book_store.sql
+-- Database schema for alx_book_store
+
 CREATE DATABASE IF NOT EXISTS alx_book_store;
 
 USE alx_book_store;
@@ -10,12 +13,12 @@ CREATE TABLE Authors (
 
 -- Create Books table
 CREATE TABLE Books (
-    BOOK_ID INT PRIMARY KEY AUTO_INCREMENT,
+    book_id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(130) NOT NULL,
     author_id INT NOT NULL,
     price DOUBLE NOT NULL,
-    PUBLICATION_DATE DATE,
-    FOREIGN KEY (author_id) REFERENCES Authors (author_id)
+    publication_date DATE,
+    FOREIGN KEY (author_id) REFERENCES Authors(author_id)
         ON UPDATE CASCADE
         ON DELETE CASCADE
 );
@@ -41,13 +44,13 @@ CREATE TABLE Orders (
 -- Create Order_Details table
 CREATE TABLE Order_Details (
     ORDERDETAILID INT PRIMARY KEY AUTO_INCREMENT,
-    ORDER_ID INT NOT NULL,
-    BOOK_ID INT NOT NULL,
+    order_id INT NOT NULL,
+    book_id INT NOT NULL,
     quantity DOUBLE NOT NULL,
-    FOREIGN KEY (ORDER_ID) REFERENCES Orders (ORDER_ID)
+    FOREIGN KEY (order_id) REFERENCES Orders(order_id)
         ON UPDATE CASCADE
         ON DELETE CASCADE,
-    FOREIGN KEY (BOOK_ID) REFERENCES Books (BOOK_ID)
+    FOREIGN KEY (book_id) REFERENCES Books(book_id)
         ON UPDATE CASCADE
         ON DELETE CASCADE
 );
