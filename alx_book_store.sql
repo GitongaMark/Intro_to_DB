@@ -22,18 +22,18 @@ CREATE TABLE Books (
 
 -- Create Customers table
 CREATE TABLE Customers (
-    CUSTOMER_ID INT PRIMARY KEY AUTO_INCREMENT,
-    CUSTOMER_NAME VARCHAR(215) NOT NULL,
+    customer_id INT PRIMARY KEY AUTO_INCREMENT,
+    customer_name VARCHAR(215) NOT NULL,
     email VARCHAR(215) UNIQUE,
     address TEXT
 );
 
 -- Create Orders table
 CREATE TABLE Orders (
-    ORDER_ID INT PRIMARY KEY AUTO_INCREMENT,
-    CUSTOMER_ID INT NOT NULL,
-    ORDER_DATE DATE NOT NULL,
-    FOREIGN KEY (CUSTOMER_ID) REFERENCES Customers (CUSTOMER_ID)
+    order_id INT PRIMARY KEY AUTO_INCREMENT,
+    customer_id INT NOT NULL,
+    order_date DATE NOT NULL,
+    FOREIGN KEY (customer_id) REFERENCES Customers (customer_id)
         ON UPDATE CASCADE
         ON DELETE CASCADE
 );
